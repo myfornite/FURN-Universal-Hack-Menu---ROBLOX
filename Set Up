@@ -1,2 +1,2 @@
 -- FURN Universal Hub
-https://raw.githubusercontent.com/myfornite/FURN-Universal-Hub---ROBLOX/refs/heads/stuff/Main%20Script
+loadstring(game:HttpGet('https://raw.githubusercontent.com/myfornite/FURN-Universal-Hub---ROBLOX/refs/heads/stuff/Main%20Script'))()
