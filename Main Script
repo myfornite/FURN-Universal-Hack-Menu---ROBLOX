@@ -744,7 +744,7 @@ local ToggleBabAutoWin = BuildABoatForTreasureTab:CreateToggle({
 			task.wait(0.5)
 			if not hrp then continue end
 			hrp.Anchored = false
-			local SmoothTweenEasingStyle = Enum.EasingStyle.Linear
+			local SmoothTweenEasingStyle = Enum.EasingStyle.Quad
 			local InitialPos = game.TweenService:Create(hrp, TweenInfo.new(1, SmoothTweenEasingStyle), {CFrame = CFrame.new(-51.4020881652832, 42.1522228717803955, 232.0143127441406, 1, 2.8233428e-08, 0.000197172689, -2.82372294e-08, 1, 1.92742942e-08, -0.000197172689, -1.92798613e-08, 1)})
 			InitialPos:Play()
 			InitialPos.Completed:Wait()
@@ -754,12 +754,12 @@ local ToggleBabAutoWin = BuildABoatForTreasureTab:CreateToggle({
 			local FlyDownWaterFall = game.TweenService:Create(hrp, TweenInfo.new(1.2, SmoothTweenEasingStyle), {CFrame = CFrame.new(-47.588069915771484, -336.2562561035156, 8662.7421875, -0.992341876, -1.69527556e-08, -0.123521589, -2.45594425e-08, 1, 6.00591932e-08, 0.123521589, 6.26328784e-08, -0.992341876)})
 			FlyDownWaterFall:Play()
 			FlyDownWaterFall.Completed:Wait()
-			local FlyToTreasure = game.TweenService:Create(hrp, TweenInfo.new(2.5, SmoothTweenEasingStyle), {CFrame = CFrame.new(-55.87642288208008, -360.52899169921875, 9492.6767578125, -0.322770327, 4.80723372e-08, 0.946477294, -2.44336444e-08, 1, -5.91232272e-08, -0.946477294, -4.22091126e-08, -0.322770327)})
+			local FlyToTreasure = game.TweenService:Create(hrp, TweenInfo.new(2.5, SmoothTweenEasingStyle), {CFrame = CFrame.new(-55.87642288208008, -360.52899169921875, 9489.6767578125, -0.322770327, 4.80723372e-08, 0.946477294, -2.44336444e-08, 1, -5.91232272e-08, -0.946477294, -4.22091126e-08, -0.322770327)})
 			FlyToTreasure:Play()
 			FlyToTreasure.Completed:Wait()
 			hrp.Anchored = true
 			task.wait(1.2)
-			local FlyToTreasure2 = game.TweenService:Create(hrp, TweenInfo.new(3, SmoothTweenEasingStyle), {CFrame = CFrame.new(-55.87642288208008, -360.52899169921875, 9493.6767578125, -0.866842806, -2.4441368e-08, -0.498581529, -2.98235392e-08, 1, 2.82993073e-09, 0.498581529, 1.732257e-08, -0.866842806)})
+			local FlyToTreasure2 = game.TweenService:Create(hrp, TweenInfo.new(3, SmoothTweenEasingStyle), {CFrame = CFrame.new(-55.87642288208008, -360.52899169921875, 9490.6767578125, -0.866842806, -2.4441368e-08, -0.498581529, -2.98235392e-08, 1, 2.82993073e-09, 0.498581529, 1.732257e-08, -0.866842806)})
 			FlyToTreasure2:Play()
 			FlyToTreasure2.Completed:Wait()
 			task.wait(2)
