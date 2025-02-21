@@ -604,6 +604,115 @@ local SliderAimBotRange = MainTab:CreateSlider({
 	end,
 })
 
+local TheStrongestBattlegroundsTab = Window:CreateTab("The Strongest Battlegrounds", nil) -- Title, Image
+
+local SgbAnimsSection = TheStrongestBattlegroundsTab:CreateSection("Animations")
+local ReloadAnimsWait = 1
+
+local FakeSaitamaUltAnim = Instance.new("Animation")
+FakeSaitamaUltAnim.AnimationId = "rbxassetid://12447707844"
+FakeSaitamaUltAnim = hum:LoadAnimation(FakeSaitamaUltAnim)
+FakeSaitamaUltAnim.Looped = false
+player.CharacterAdded:Connect(function()
+	task.wait(ReloadAnimsWait)
+	FakeSaitamaUltAnim = Instance.new("Animation")
+	FakeSaitamaUltAnim.AnimationId = "rbxassetid://12447707844"
+	FakeSaitamaUltAnim = hum:LoadAnimation(FakeSaitamaUltAnim)
+	FakeSaitamaUltAnim.Looped = false
+end)
+local ToggleFakeSaitamaUltAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
+	Name = "Fake Saitama Ultimate",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		-- The function that takes place when the toggle is pressed
+		-- The variable (Value) is a boolean on whether the toggle is true or false
+		if Value then
+			FakeSaitamaUltAnim:Play()
+		else
+			FakeSaitamaUltAnim:Stop()
+		end
+	end,
+})
+FakeSaitamaUltAnim.Ended:Connect(function()
+	ToggleFakeSaitamaUltAnimSgb:Set(false)
+end)
+
+local FakeOmniAnim = Instance.new("Animation")
+FakeOmniAnim.AnimationId = "rbxassetid://13927612951"
+FakeOmniAnim = hum:LoadAnimation(FakeOmniAnim)
+FakeOmniAnim.Looped = false
+player.CharacterAdded:Connect(function()
+	task.wait(ReloadAnimsWait)
+	FakeOmniAnim = Instance.new("Animation")
+	FakeOmniAnim.AnimationId = "rbxassetid://13927612951"
+	FakeOmniAnim = hum:LoadAnimation(FakeOmniAnim)
+	FakeOmniAnim.Looped = false
+end)
+local FakeOmniAnim2 = Instance.new("Animation")
+FakeOmniAnim2.AnimationId = "rbxassetid://13891242085"
+FakeOmniAnim2 = hum:LoadAnimation(FakeOmniAnim2)
+FakeOmniAnim2.Looped = false
+player.CharacterAdded:Connect(function()
+	task.wait(ReloadAnimsWait)
+	FakeOmniAnim2 = Instance.new("Animation")
+	FakeOmniAnim2.AnimationId = "rbxassetid://13891242085"
+	FakeOmniAnim2 = hum:LoadAnimation(FakeOmniAnim2)
+	FakeOmniAnim2.Looped = false
+end)
+local ToggleFakeOmniAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
+	Name = "Fake Omni Directional Punch",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		-- The function that takes place when the toggle is pressed
+		-- The variable (Value) is a boolean on whether the toggle is true or false
+		if Value then
+			FakeOmniAnim:Play()
+			FakeOmniAnim2:Stop()
+		else
+			FakeOmniAnim:Stop()
+			task.wait(0.03)
+			FakeOmniAnim2:Stop()
+		end
+	end,
+})
+FakeOmniAnim.Ended:Connect(function()
+	FakeOmniAnim2:Play(0)
+end)
+FakeOmniAnim2.Ended:Connect(function()
+	ToggleFakeOmniAnimSgb:Set(false)
+end)
+
+local UFWuserAnim = Instance.new("Animation")
+UFWuserAnim.AnimationId = "rbxassetid://77727115892579"
+UFWuserAnim = hum:LoadAnimation(UFWuserAnim)
+UFWuserAnim.Looped = false
+player.CharacterAdded:Connect(function()
+	task.wait(ReloadAnimsWait)
+	UFWuserAnim = Instance.new("Animation")
+	UFWuserAnim.AnimationId = "rbxassetid://77727115892579"
+	UFWuserAnim = hum:LoadAnimation(UFWuserAnim)
+	UFWuserAnim.Looped = false
+end)
+local ToggleUFWanimSgb = TheStrongestBattlegroundsTab:CreateToggle({
+	Name = "Ultimate Flex Works",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		-- The function that takes place when the toggle is pressed
+		-- The variable (Value) is a boolean on whether the toggle is true or false
+		if Value then
+			UFWuserAnim:Play()
+		else
+			UFWuserAnim:Stop()
+		end
+	end,
+})
+UFWuserAnim.Ended:Connect(function()
+	ToggleUFWanimSgb:Set(false)
+end)
+
 local BuildABoatForTreasureTab = Window:CreateTab("Build A Boat For Treasure", nil) -- Title, Image
 
 local BabAutoWinEnabled = false
@@ -650,107 +759,3 @@ local ToggleBabAutoWin = BuildABoatForTreasureTab:CreateToggle({
 		end
 	end,
 })
-
-local TheStrongestBattlegroundsTab = Window:CreateTab("The Strongest Battlegrounds", nil) -- Title, Image
-
-local SgbAnimsSection = TheStrongestBattlegroundsTab:CreateSection("Animations")
-
-local FakeSaitamaUltAnim = Instance.new("Animation")
-FakeSaitamaUltAnim.AnimationId = "rbxassetid://12447707844"
-FakeSaitamaUltAnim = hum:LoadAnimation(FakeSaitamaUltAnim)
-FakeSaitamaUltAnim.Looped = false
-player.CharacterAdded:Connect(function()
-	FakeSaitamaUltAnim = Instance.new("Animation")
-	FakeSaitamaUltAnim.AnimationId = "rbxassetid://12447707844"
-	FakeSaitamaUltAnim = hum:LoadAnimation(FakeSaitamaUltAnim)
-	FakeSaitamaUltAnim.Looped = false
-end)
-local ToggleFakeSaitamaUltAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
-	Name = "Fake Saitama Ultimate",
-	CurrentValue = false,
-	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(Value)
-		-- The function that takes place when the toggle is pressed
-		-- The variable (Value) is a boolean on whether the toggle is true or false
-		if Value then
-			FakeSaitamaUltAnim:Play()
-		else
-			FakeSaitamaUltAnim:Stop()
-		end
-	end,
-})
-FakeSaitamaUltAnim.Ended:Connect(function()
-	ToggleFakeSaitamaUltAnimSgb:Set(false)
-end)
-
-local FakeOmniAnim = Instance.new("Animation")
-FakeOmniAnim.AnimationId = "rbxassetid://13927612951"
-FakeOmniAnim = hum:LoadAnimation(FakeOmniAnim)
-FakeOmniAnim.Looped = false
-player.CharacterAdded:Connect(function()
-	FakeOmniAnim = Instance.new("Animation")
-	FakeOmniAnim.AnimationId = "rbxassetid://13927612951"
-	FakeOmniAnim = hum:LoadAnimation(FakeOmniAnim)
-	FakeOmniAnim.Looped = false
-end)
-local FakeOmniAnim2 = Instance.new("Animation")
-FakeOmniAnim2.AnimationId = "rbxassetid://13891242085"
-FakeOmniAnim2 = hum:LoadAnimation(FakeOmniAnim2)
-FakeOmniAnim2.Looped = false
-player.CharacterAdded:Connect(function()
-	FakeOmniAnim2 = Instance.new("Animation")
-	FakeOmniAnim2.AnimationId = "rbxassetid://13891242085"
-	FakeOmniAnim2 = hum:LoadAnimation(FakeOmniAnim2)
-	FakeOmniAnim2.Looped = false
-end)
-local ToggleFakeOmniAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
-	Name = "Fake Omni Directional Punch",
-	CurrentValue = false,
-	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(Value)
-		-- The function that takes place when the toggle is pressed
-		-- The variable (Value) is a boolean on whether the toggle is true or false
-		if Value then
-			FakeOmniAnim:Play()
-			FakeOmniAnim2:Stop()
-		else
-			FakeOmniAnim:Stop()
-			task.wait(0.03)
-			FakeOmniAnim2:Stop()
-		end
-	end,
-})
-FakeOmniAnim.Ended:Connect(function()
-	FakeOmniAnim2:Play(0)
-end)
-FakeOmniAnim2.Ended:Connect(function()
-	ToggleFakeOmniAnimSgb:Set(false)
-end)
-
-local UFWuserAnim = Instance.new("Animation")
-UFWuserAnim.AnimationId = "rbxassetid://77727115892579"
-UFWuserAnim = hum:LoadAnimation(UFWuserAnim)
-UFWuserAnim.Looped = false
-player.CharacterAdded:Connect(function()
-	UFWuserAnim = Instance.new("Animation")
-	UFWuserAnim.AnimationId = "rbxassetid://77727115892579"
-	UFWuserAnim = hum:LoadAnimation(UFWuserAnim)
-	UFWuserAnim.Looped = false
-end)
-local ToggleUFWanimSgb = TheStrongestBattlegroundsTab:CreateToggle({
-	Name = "Ultimate Flex Works",
-	CurrentValue = false,
-	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(Value)
-		-- The function that takes place when the toggle is pressed
-		-- The variable (Value) is a boolean on whether the toggle is true or false
-		if Value then
-			UFWuserAnim:Play()
-		else
-			UFWuserAnim:Stop()
-		end
-	end,
-})
-UFWuserAnim.Ended:Connect(function()
-	ToggleUFWanimSgb:Set(false)
-end)
