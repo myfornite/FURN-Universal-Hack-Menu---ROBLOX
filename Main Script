@@ -607,8 +607,8 @@ local SliderAimBotRange = MainTab:CreateSlider({
 local TheStrongestBattlegroundsTab = Window:CreateTab("The Strongest Battlegrounds", nil) -- Title, Image
 
 local SgbAnimsSection = TheStrongestBattlegroundsTab:CreateSection("Animations")
+local SgbAnimPriorities = Enum.AnimationPriority.Action4
 local ReloadAnimsWait = 1
-local SgbAnimPriorities = Enum.AnimationPriority.Action
 
 local FakeSaitamaUltAnim = Instance.new("Animation")
 FakeSaitamaUltAnim.AnimationId = "rbxassetid://12447707844"
