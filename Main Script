@@ -153,7 +153,7 @@ local ButtonFlingSelf = MainTab:CreateButton({
 		if not hrp then return end
 		local n1 = 1000
 		hum:ChangeState(Enum.HumanoidStateType.Physics)
-		task.wait(0.12)
+		task.wait(0.22)
 		hrp.Velocity = Vector3.new(n1,n1,n1)
 	end,
 })
