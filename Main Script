@@ -655,14 +655,12 @@ local TheStrongestBattlegroundsTab = Window:CreateTab("The Strongest Battlegroun
 
 local SgbAnimsSection = TheStrongestBattlegroundsTab:CreateSection("Animations")
 
-task.wait(2)
-
 local FakeSaitamaUltAnim = Instance.new("Animation")
 FakeSaitamaUltAnim.AnimationId = "rbxassetid://12447707844"
 FakeSaitamaUltAnim = hum:LoadAnimation(FakeSaitamaUltAnim)
 FakeSaitamaUltAnim.Looped = false
 player.CharacterAdded:Connect(function()
-	local FakeSaitamaUltAnim = Instance.new("Animation")
+	FakeSaitamaUltAnim = Instance.new("Animation")
 	FakeSaitamaUltAnim.AnimationId = "rbxassetid://12447707844"
 	FakeSaitamaUltAnim = hum:LoadAnimation(FakeSaitamaUltAnim)
 	FakeSaitamaUltAnim.Looped = false
@@ -690,7 +688,7 @@ FakeOmniAnim.AnimationId = "rbxassetid://13927612951"
 FakeOmniAnim = hum:LoadAnimation(FakeOmniAnim)
 FakeOmniAnim.Looped = false
 player.CharacterAdded:Connect(function()
-	local FakeOmniAnim = Instance.new("Animation")
+	FakeOmniAnim = Instance.new("Animation")
 	FakeOmniAnim.AnimationId = "rbxassetid://13927612951"
 	FakeOmniAnim = hum:LoadAnimation(FakeOmniAnim)
 	FakeOmniAnim.Looped = false
@@ -700,7 +698,7 @@ FakeOmniAnim2.AnimationId = "rbxassetid://13891242085"
 FakeOmniAnim2 = hum:LoadAnimation(FakeOmniAnim2)
 FakeOmniAnim2.Looped = false
 player.CharacterAdded:Connect(function()
-	local FakeOmniAnim2 = Instance.new("Animation")
+	FakeOmniAnim2 = Instance.new("Animation")
 	FakeOmniAnim2.AnimationId = "rbxassetid://13891242085"
 	FakeOmniAnim2 = hum:LoadAnimation(FakeOmniAnim2)
 	FakeOmniAnim2.Looped = false
@@ -734,7 +732,7 @@ UFWuserAnim.AnimationId = "rbxassetid://77727115892579"
 UFWuserAnim = hum:LoadAnimation(UFWuserAnim)
 UFWuserAnim.Looped = false
 player.CharacterAdded:Connect(function()
-	local UFWuserAnim = Instance.new("Animation")
+	UFWuserAnim = Instance.new("Animation")
 	UFWuserAnim.AnimationId = "rbxassetid://77727115892579"
 	UFWuserAnim = hum:LoadAnimation(UFWuserAnim)
 	UFWuserAnim.Looped = false
