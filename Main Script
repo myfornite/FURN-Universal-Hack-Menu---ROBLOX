@@ -717,6 +717,7 @@ local ToggleFakeOmniAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
 			FakeOmniAnim2:Stop()
 		else
 			FakeOmniAnim:Stop()
+			task.wait(0.03)
 			FakeOmniAnim2:Stop()
 		end
 	end,
