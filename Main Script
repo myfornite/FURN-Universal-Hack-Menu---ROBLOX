@@ -608,17 +608,20 @@ local TheStrongestBattlegroundsTab = Window:CreateTab("The Strongest Battlegroun
 
 local SgbAnimsSection = TheStrongestBattlegroundsTab:CreateSection("Animations")
 local ReloadAnimsWait = 1
+local SgbAnimPriorities = Enum.AnimationPriority.Action
 
 local FakeSaitamaUltAnim = Instance.new("Animation")
 FakeSaitamaUltAnim.AnimationId = "rbxassetid://12447707844"
 FakeSaitamaUltAnim = hum:LoadAnimation(FakeSaitamaUltAnim)
 FakeSaitamaUltAnim.Looped = false
+FakeSaitamaUltAnim.Priority = SgbAnimPriorities
 player.CharacterAdded:Connect(function()
 	task.wait(ReloadAnimsWait)
 	FakeSaitamaUltAnim = Instance.new("Animation")
 	FakeSaitamaUltAnim.AnimationId = "rbxassetid://12447707844"
 	FakeSaitamaUltAnim = hum:LoadAnimation(FakeSaitamaUltAnim)
 	FakeSaitamaUltAnim.Looped = false
+	FakeSaitamaUltAnim.Priority = SgbAnimPriorities
 end)
 local ToggleFakeSaitamaUltAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
 	Name = "Fake Saitama Ultimate",
@@ -642,23 +645,27 @@ local FakeOmniAnim = Instance.new("Animation")
 FakeOmniAnim.AnimationId = "rbxassetid://13927612951"
 FakeOmniAnim = hum:LoadAnimation(FakeOmniAnim)
 FakeOmniAnim.Looped = false
+FakeOmniAnim.Priority = SgbAnimPriorities
 player.CharacterAdded:Connect(function()
 	task.wait(ReloadAnimsWait)
 	FakeOmniAnim = Instance.new("Animation")
 	FakeOmniAnim.AnimationId = "rbxassetid://13927612951"
 	FakeOmniAnim = hum:LoadAnimation(FakeOmniAnim)
 	FakeOmniAnim.Looped = false
+	FakeOmniAnim.Priority = SgbAnimPriorities
 end)
 local FakeOmniAnim2 = Instance.new("Animation")
 FakeOmniAnim2.AnimationId = "rbxassetid://13891242085"
 FakeOmniAnim2 = hum:LoadAnimation(FakeOmniAnim2)
 FakeOmniAnim2.Looped = false
+FakeOmniAnim2.Priority = SgbAnimPriorities
 player.CharacterAdded:Connect(function()
 	task.wait(ReloadAnimsWait)
 	FakeOmniAnim2 = Instance.new("Animation")
 	FakeOmniAnim2.AnimationId = "rbxassetid://13891242085"
 	FakeOmniAnim2 = hum:LoadAnimation(FakeOmniAnim2)
 	FakeOmniAnim2.Looped = false
+	FakeOmniAnim2.Priority = SgbAnimPriorities
 end)
 local ToggleFakeOmniAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
 	Name = "Fake Omni Directional Punch",
@@ -688,12 +695,14 @@ local UFWuserAnim = Instance.new("Animation")
 UFWuserAnim.AnimationId = "rbxassetid://77727115892579"
 UFWuserAnim = hum:LoadAnimation(UFWuserAnim)
 UFWuserAnim.Looped = false
+UFWuserAnim.Priority = SgbAnimPriorities
 player.CharacterAdded:Connect(function()
 	task.wait(ReloadAnimsWait)
 	UFWuserAnim = Instance.new("Animation")
 	UFWuserAnim.AnimationId = "rbxassetid://77727115892579"
 	UFWuserAnim = hum:LoadAnimation(UFWuserAnim)
 	UFWuserAnim.Looped = false
+	UFWuserAnim.Priority = SgbAnimPriorities
 end)
 local ToggleUFWanimSgb = TheStrongestBattlegroundsTab:CreateToggle({
 	Name = "Ultimate Flex Works",
