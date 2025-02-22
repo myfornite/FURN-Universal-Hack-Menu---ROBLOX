@@ -688,7 +688,7 @@ FakeOmniAnim = hum:LoadAnimation(FakeOmniAnim)
 FakeOmniAnim.Looped = false
 FakeOmniAnim.Priority = SgbAnimPriorities
 local ToggleFakeOmniAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
-	Name = "Fake Omni Directional Punch",
+	Name = "Omni Directional Punch",
 	CurrentValue = false,
 	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(Value)
@@ -714,6 +714,74 @@ player.CharacterAdded:Connect(function()
 end)
 FakeOmniAnim.Ended:Connect(function()
 	ToggleFakeOmniAnimSgb:Set(false)
+end)
+
+local FakeSeriousPunchAnim = Instance.new("Animation")
+FakeSeriousPunchAnim.AnimationId = "rbxassetid://12983333733"
+FakeSeriousPunchAnim = hum:LoadAnimation(FakeSeriousPunchAnim)
+FakeSeriousPunchAnim.Looped = false
+FakeSeriousPunchAnim.Priority = SgbAnimPriorities
+local ToggleFakeSeriousPunchAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
+	Name = "Serious Punch",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		-- The function that takes place when the toggle is pressed
+		-- The variable (Value) is a boolean on whether the toggle is true or false
+		if Value then
+			FakeSeriousPunchAnim:Play()
+		else
+			FakeSeriousPunchAnim:Stop()
+		end
+	end,
+})
+player.CharacterAdded:Connect(function()
+	task.wait(ReloadAnimsWait)
+	FakeSeriousPunchAnim = Instance.new("Animation")
+	FakeSeriousPunchAnim.AnimationId = "rbxassetid://12983333733"
+	FakeSeriousPunchAnim = hum:LoadAnimation(FakeSeriousPunchAnim)
+	FakeSeriousPunchAnim.Looped = false
+	FakeSeriousPunchAnim.Priority = SgbAnimPriorities
+	FakeSeriousPunchAnim.Ended:Connect(function()
+		ToggleFakeSeriousPunchAnimSgb:Set(false)
+	end)
+end)
+FakeSeriousPunchAnim.Ended:Connect(function()
+	ToggleFakeSeriousPunchAnimSgb:Set(false)
+end)
+
+local FakeTableFlipAnim = Instance.new("Animation")
+FakeTableFlipAnim.AnimationId = "rbxassetid://11365563255"
+FakeTableFlipAnim = hum:LoadAnimation(FakeTableFlipAnim)
+FakeTableFlipAnim.Looped = false
+FakeTableFlipAnim.Priority = SgbAnimPriorities
+local ToggleFakeTableFlipAnimSgb = TheStrongestBattlegroundsTab:CreateToggle({
+	Name = "Table Flip",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		-- The function that takes place when the toggle is pressed
+		-- The variable (Value) is a boolean on whether the toggle is true or false
+		if Value then
+			FakeTableFlipAnim:Play()
+		else
+			FakeTableFlipAnim:Stop()
+		end
+	end,
+})
+player.CharacterAdded:Connect(function()
+	task.wait(ReloadAnimsWait)
+	FakeTableFlipAnim = Instance.new("Animation")
+	FakeTableFlipAnim.AnimationId = "rbxassetid://11365563255"
+	FakeTableFlipAnim = hum:LoadAnimation(FakeTableFlipAnim)
+	FakeTableFlipAnim.Looped = false
+	FakeTableFlipAnim.Priority = SgbAnimPriorities
+	FakeTableFlipAnim.Ended:Connect(function()
+		ToggleFakeTableFlipAnimSgb:Set(false)
+	end)
+end)
+FakeTableFlipAnim.Ended:Connect(function()
+	ToggleFakeTableFlipAnimSgb:Set(false)
 end)
 
 local UFWuserAnim = Instance.new("Animation")
