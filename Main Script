@@ -504,7 +504,7 @@ local plrCDaim = 0
 -- Function to find the nearest humanoid to the mouse that is visible (no walls)
 local function getNearestHumanoidToMouse()
 	local nearestHumanoid = nil
-	local shortestDistance = (AimRange)*6
+	local shortestDistance = (AimRange)*7.5
 
 	for _, object in pairs(workspace:GetDescendants()) do
 		if object:IsA("Humanoid") and object.Parent:FindFirstChild("HumanoidRootPart") then
