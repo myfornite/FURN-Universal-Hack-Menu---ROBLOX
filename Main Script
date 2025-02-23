@@ -650,83 +650,203 @@ local animations = {
 	{
 		Section = "Saitama Animations",
 		Name = "Ultimate",
-		ID = "12447707844",
+		ID = 12447707844,
 	},
 	{
 		Name = "Omni Directional Punch",
-		ID = "13927612951",
+		ID = 13927612951,
 	},
 	{
 		Name = "Serious Punch",
-		ID = "12983333733",
+		ID = 12983333733,
 	},
 	{
 		Name = "Table Flip",
-		ID = "11365563255",
+		ID = 11365563255,
 	},
 	{
 		Section = "Hero Hunter Animations",
 		Name = "Ultimate",
-		ID = "12342141464",
+		ID = 12342141464,
+	},
+	{
+		Name = "Water Stream Cutting Fist",
+		ID = 12460977270,
+	},
+	{
+		Name = "Final Hunt Use",
+		ID = 12463072679,
+	},
+	{
+		Name = "Final Hunt Hit",
+		ID = 12467789963,
+	},
+	{
+		Name = "Rock Splitting Fist",
+		ID = 14057231976,
+	},
+	{
+		Name = "Crushed Rock Use",
+		ID = 13630786846,
+	},
+	{
+		Name = "Crushed Rock Hit",
+		ID = 13813099821,
+	},
+	{
+		Section = "Destructive Cyborg Animations",
+		Name = "Ultimate",
+		ID = 12772543293,
+	},
+	{
+		Name = "Speed Blitz Dropkick",
+		ID = 12832505612,
+	},
+	{
+		Name = "Flamewave Canon",
+		ID = 13083332742,
+	},
+	{
+		Name = "Incinerate",
+		ID = 13146710762,
+	},
+	{
+		Section = "Deadly Ninja Animations",
+		Name = "Ultimate",
+		ID = 13499771836,
+	},
+	{
+		Name = "Twinblade Rush Use",
+		ID = 13632347366,
+	},
+	{
+		Name = "Twinblade Rush Hit",
+		ID = 13633468484,
+	},
+	{
+		Name = "Straight On",
+		ID = 13643152947,
+	},
+	{
+		Name = "Carnage",
+		ID = 13723174078,
+	},
+	{
+		Name = "Fourfold Flashstrike",
+		ID = 13881335713,
 	},
 	{
 		Section = "Brutal Demon Animations",
 		Name = "Ultimate",
-		ID = "14733282425",
+		ID = 14733282425,
 	},
 	{
 		Name = "Death Blow Use",
-		ID = "15128849047",
+		ID = 15128849047,
 	},
 	{
 		Name = "Death Blow Counter",
-		ID = "15123665491",
+		ID = 15123665491,
 	},
 	{
 		Name = "Savage Tornado",
-		ID = "14719290328",
+		ID = 14719290328,
 	},
 	{
 		Name = "Brutal Beatdown",
-		ID = "14701242661",
+		ID = 14701242661,
 	},
 	{
 		Name = "Strength Difference Use",
-		ID = "14900168720",
+		ID = 14900168720,
 	},
 	{
 		Name = "Strength Difference Hit",
-		ID = "14920779925",
+		ID = 14920779925,
+	},
+	{
+		Section = "Blade Master Animations",
+		Name = "Ultimate",
+		ID = 15391323441,
+	},
+	{
+		Name = "Sunset",
+		ID = 15520132233,
+	},
+	{
+		Name = "Solar Cleave",
+		ID = 15676072469,
+	},
+	{
+		Name = "Sun Rise Use",
+		ID = 16062410809,
+	},
+	{
+		Name = "Sun Rise Hit",
+		ID = 16062712948,
+	},
+	{
+		Name = "Atomic Slash Use",
+		ID = 16082123712,
+	},
+	{
+		Name = "Atomic Slash Hit",
+		ID = 16057411888,
+	},
+	{
+		Section = "Wild Psychic Animations",
+		Name = "Ultimate",
+		ID = 16734584478,
+	},
+	{
+		Name = "Cosmic Strike",
+		ID = 16737255386,
+	},
+	{
+		Name = "Psychic Ricochet",
+		ID = 17450393107,
+	},
+	{
+		Name = "Terrible Tornado",
+		ID = 17278415853,
+	},
+	{
+		Name = "Sky Snatcher Use",
+		ID = 17860467628,
+	},
+	{
+		Name = "Sky Snatcher Hit",
+		ID = 17889080495,
 	},
 	{
 		Section = "The Frozen Soul Animations",
 		Name = "Equip",
-		ID = "95000469063288",
+		ID = 95000469063288,
 	},
 	{
 		Name = "Ultimate: Sub-Zero Slash Storm",
-		ID = "134494086123052",
+		ID = 134494086123052,
 	},
 	{
 		Name = "Permafrost",
-		ID = "100558589307006",
+		ID = 100558589307006,
 	},
 	{
 		Name = "Frost Forge",
-		ID = "137561511768861",
+		ID = 137561511768861,
 	},
 	{
 		Name = "Freezing Path",
-		ID = "112620365240235",
+		ID = 112620365240235,
 	},
 	{
 		Name = "Judgement Chain",
-		ID = "75547590335774",
+		ID = 75547590335774,
 	},
 	{
 		Section = "KJ Animations",
 		Name = "Ultimate Flex Works",
-		ID = "77727115892579",
+		ID = 77727115892579,
 	},
 }
 
