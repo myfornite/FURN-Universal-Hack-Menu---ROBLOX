@@ -804,7 +804,7 @@ local animations = {
 	},
 	{
 		Name = "Psychic Ricochet",
-		ID = 17450393107,
+		ID = 17464644182,
 	},
 	{
 		Name = "Terrible Tornado",
