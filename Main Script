@@ -201,6 +201,28 @@ local ButtonSuicide = MainTab:CreateButton({
 		hum.Health = 0
 	end,
 })
+local SuicideSP = CFrame.new(0,0,0)
+local ButtonSuicideSP = MainTab:CreateButton({
+	Name = "Set Suicide SpawnPoint",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+		if not hum then return end
+		if not hrp then return end
+		SuicideSP = hrp.CFrame
+	end,
+})
+local ButtonSuicideAndGoToSP = MainTab:CreateButton({
+	Name = "Suicide and go to SpawnPoint",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+		if not hum then return end
+		if not hrp then return end
+		hum.Health = 0
+		player.CharacterAdded:Wait()
+		task.wait(0.7)
+		hrp.CFrame = SuicideSP
+	end,
+})
 
 local TeleportationSection = MainTab:CreateSection("Teleportion")
 
