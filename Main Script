@@ -151,9 +151,9 @@ local ButtonFlingSelf = MainTab:CreateButton({
 		-- The function that takes place when the button is pressed
 		if not hum then return end
 		if not hrp then return end
-		local n1 = 1000
-		hum:ChangeState(Enum.HumanoidStateType.Physics)
-		task.wait(0.22)
+		local n1 = math.random(-2000, 3000)
+		hum.Sit = true
+		task.wait(0.03)
 		hrp.Velocity = Vector3.new(n1,n1,n1)
 	end,
 })
@@ -167,7 +167,13 @@ local function loadFlingOnTouch()
 		local victimhum = hit.Parent:FindFirstChild("Humanoid")
 		if not victimhum then return end
 		if not hrp then return end
+		local SavedAnchorState = hrp.Anchored
+		task.wait(0.03)
+		hrp.Anchored = true
+		task.wait(0.03)
 		hrp.Velocity = Vector3.new(math.random(-1000, 1000), math.random(-1000, 1000), math.random(-1000, 1000))
+		task.wait(0.03)
+		hrp.Anchored = SavedAnchorState
 	end)
 end
 player.CharacterAdded:Connect(function()
@@ -648,6 +654,31 @@ local ReloadAnimsWait = 1
 
 local animations = {
 	{
+		Section = "KJ Animations",
+		Name = "Ultimate",
+		ID = 18445236460,
+	},
+	{
+		Name = "Stoic Bomb",
+		ID = 17141153099,
+	},
+	{
+		Name = "20-20-20 Dropkick Use",
+		ID = 17354976067,
+	},
+	{
+		Name = "20-20-20 Dropkick Hit",
+		ID = 17420452843,
+	},
+	{
+		Name = "Collateral Ruin",
+		ID = 17325254223,
+	},
+	{
+		Name = "Ultimate Flex Works",
+		ID = 77727115892579,
+	},
+	{
 		Section = "Saitama Animations",
 		Name = "Ultimate",
 		ID = 12447707844,
@@ -819,6 +850,35 @@ local animations = {
 		ID = 17889080495,
 	},
 	{
+		Section = "Martial Artist Animations",
+		Name = "Ultimate",
+		ID = 18435535291,
+	},
+	{
+		Name = "Grand Fissure",
+		ID = 129651400898906,
+	},
+	{
+		Name = "Twin Fangs",
+		ID = 18896229321,
+	},
+	{
+		Name = "Earth Splitting Strike Use",
+		ID = 18897119503,
+	},
+	{
+		Name = "Earth Splitting Strike Hit",
+		ID = 18897118507,
+	},
+	{
+		Name = "Last Breath Use",
+		ID = 106755459092436,
+	},
+	{
+		Name = "Last Breath Hit",
+		ID = 75502010126640,
+	},
+	{
 		Section = "The Frozen Soul Animations",
 		Name = "Equip",
 		ID = 95000469063288,
@@ -842,11 +902,6 @@ local animations = {
 	{
 		Name = "Judgement Chain",
 		ID = 75547590335774,
-	},
-	{
-		Section = "KJ Animations",
-		Name = "Ultimate Flex Works",
-		ID = 77727115892579,
 	},
 }
 
