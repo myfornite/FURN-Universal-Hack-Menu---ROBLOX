@@ -655,7 +655,11 @@ local ReloadAnimsWait = 1
 local animations = {
 	{
 		Section = "KJ Animations",
-		Name = "Ultimate",
+		Name = "Ultimate 1",
+		ID = 17140902079,
+	},
+	{
+		Name = "Ultimate 2",
 		ID = 18445236460,
 	},
 	{
