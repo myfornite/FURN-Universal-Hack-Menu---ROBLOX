@@ -674,9 +674,25 @@ local SliderAimBotRange = MainTab:CreateSlider({
 	end,
 })
 
-local TerminalTab = Window:CreateTab("Terminal", "terminal") -- Title, Image
+local ButtonAllowShiftlock = MainTab:CreateButton({
+	Name = "Allow Shiftlock",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+		if player.DevEnableMouseLock then
+			Rayfield:Notify({
+				Title = "...",
+				Content = "Shiftlock is already allowed",
+				Duration = 2.5,
+				Image = "shield-alert",
+			})
+		end
+		player.DevEnableMouseLock = true
+	end,
+})
 
+local TerminalTab = Window:CreateTab("Terminal", "terminal") -- Title, Image
 local TerminalSource = 'print("Hello world!")'
+TerminalTab:CreateSection("Default variables: player, char, hum, hrp, head, cam")
 
 local InputTerminal = TerminalTab:CreateInput({
 	Name = "Source",
