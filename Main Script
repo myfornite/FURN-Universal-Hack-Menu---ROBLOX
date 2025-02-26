@@ -726,7 +726,7 @@ local ButtonExecuteTerminal = TerminalTab:CreateButton({
 			broke = string.split(broke, ":")
 			local brokeLine = tostring((tonumber(broke[2] or broke[1]) or 0)-698)
 			if tonumber(brokeLine) <= 0 then brokeLine = "?" end
-			broke = broke[3] or broke[2] .. " / line: " .. brokeLine
+			broke = broke[3] or broke[2] or "Error" .. " / line: " .. brokeLine
 			broke = tostring(broke)
 			Rayfield:Notify({
 				Title = "Error",
