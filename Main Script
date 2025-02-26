@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-	Name = "FURN Universal Hub",
+	Name = "FURN UniHub",
 	Icon = "leaf", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
 	LoadingTitle = "Loading...",
 	LoadingSubtitle = "Please wait.",
@@ -34,7 +34,7 @@ local Window = Rayfield:CreateWindow({
 	}
 })
 
-local MainTab = Window:CreateTab("Main Tools", nil) -- Title, Image
+local MainTab = Window:CreateTab("Main Tools", "user-round") -- Title, Image
 
 player = game.Players.LocalPlayer
 
@@ -78,9 +78,13 @@ for i, thing in RS:GetDescendants() do
 	if thing:IsA("ColorGradingEffect") then thing:Destroy() end
 end
 
-Status =  Instance.new("ColorGradingEffect", RS)
+Status = Instance.new("ColorGradingEffect", RS)
 Status.Name = "Status"..math.random(10000,99999)
 StatusFlagType = "BoolValue"
+
+Terminal = Instance.new("ColorGradingEffect", game.ReplicatedFirst)
+Terminal.Name = "Terminal"..math.random(10000,99999)
+TerminalType = "LocalScript"
 
 local CharacterSection = MainTab:CreateSection("Character")
 
@@ -670,6 +674,55 @@ local SliderAimBotRange = MainTab:CreateSlider({
 	end,
 })
 
+local TerminalTab = Window:CreateTab("Terminal", "terminal") -- Title, Image
+
+local TerminalSource = 'print("Hello world!")'
+
+local InputTerminal = TerminalTab:CreateInput({
+	Name = "Source",
+	CurrentValue = TerminalSource,
+	PlaceholderText = "...",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input1",
+	Callback = function(Text)
+		-- The function that takes place when the input is changed
+		-- The variable (Text) is a string for the value in the text box
+		TerminalSource = tostring(Text)
+	end,
+})
+
+local ButtonExecuteTerminal = TerminalTab:CreateButton({
+	Name = "Execute",
+	Callback = function()
+		-- The function that takes place when the button is pressed
+		local ran, broke = pcall(function()
+			return loadstring(TerminalSource)()
+		end)
+		if ran then
+			Rayfield:Notify({
+				Title = "Success",
+				Content = "Executed source / " .. TerminalType,
+				Duration = 6.5,
+				Image = "shield-check",
+			})
+		else
+			warn(broke)
+			broke = string.split(broke, ":")
+			local brokeLine = tostring((tonumber(broke[2] or broke[1]) or 0)-698)
+			if tonumber(brokeLine) <= 0 then brokeLine = "?" end
+			broke = broke[3] or broke[2] .. " / line: " .. brokeLine
+			broke = tostring(broke)
+			Rayfield:Notify({
+				Title = "Error",
+				Content = "Error Code / " .. broke,
+				Duration = 6.5,
+				Image = "shield-x",
+			})
+			warn(broke)
+		end
+	end,
+})
+
 local TheStrongestBattlegroundsTab = Window:CreateTab("The Strongest Battlegrounds", nil) -- Title, Image
 local SgbAnimPriorities = Enum.AnimationPriority.Action4
 local ReloadAnimsWait = 1
@@ -877,7 +930,7 @@ local animations = {
 	},
 	{
 		Section = "Martial Artist Animations",
-		Name = "Ultimate",
+		Name = "Ultimate (goofy)",
 		ID = 18435535291,
 	},
 	{
