@@ -1,4 +1,29 @@
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+clientText = [[Ｆｕｒｎ Ｃｌｉｅｎｔ]]
+logo = clientText .. [[ uses Rayfield / Loading...
+
+	 ________ ___  ___  ________  ________      
+	|\  _____\\  \|\  \|\   __  \|\   ___  \    
+	\ \  \__/\ \  \\\  \ \  \|\  \ \  \\ \  \   
+	 \ \   __\\ \  \\\  \ \   _  _\ \  \\ \  \  
+	  \ \  \_| \ \  \\\  \ \  \\  \\ \  \\ \  \ 
+	   \ \__\   \ \_______\ \__\\ _\\ \__\\ \__\
+	    \|__|    \|_______|\|__|\|__|\|__| \|__|
+
+
+]]
+
+print(logo)
+
+local Rayfield = nil
+pcall(function()
+	Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+end)
+if Rayfield then
+	print("Rayfield has been injected.")
+else
+	print("Rayfield has failed to inject.")
+	return
+end
 
 local Window = Rayfield:CreateWindow({
 	Name = "FURN UniHub",
@@ -712,7 +737,7 @@ local ButtonExecuteTerminal = TerminalTab:CreateButton({
 	Callback = function()
 		-- The function that takes place when the button is pressed
 		local ran, broke = pcall(function()
-			return loadstring(TerminalSource)()
+			return task.spawn(function() loadstring(TerminalSource)() end)
 		end)
 		if ran then
 			Rayfield:Notify({
@@ -724,7 +749,7 @@ local ButtonExecuteTerminal = TerminalTab:CreateButton({
 		else
 			warn(broke)
 			broke = string.split(broke, ":")
-			local brokeLine = tostring((tonumber(broke[2] or broke[1]) or 0)-698)
+			local brokeLine = tostring((tonumber(broke[2] or broke[1]) or 0)-743) -- 1 line less than this line
 			if tonumber(brokeLine) <= 0 then brokeLine = "?" end
 			broke = broke[3] or broke[2] or "Error" .. " / line: " .. brokeLine
 			broke = tostring(broke)
@@ -1092,3 +1117,5 @@ local ToggleBabAutoWin = BuildABoatForTreasureTab:CreateToggle({
 		end
 	end,
 })
+
+print(clientText .. " has fully loaded.")
